@@ -15,7 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::with('user')->get();
 
         return $posts;
     }
@@ -43,7 +43,7 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->subtitle = $request->subtitle;
         $post->body = $request->body;
-        $post->author = $request->author;
+        $post->user_id = $request->user_id;
 
         $post->save();
 
@@ -58,7 +58,8 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        return $post;
+        $id = $post->id;
+        return Post::with('user')->where('id', $id)->get();
     }
 
     /**
@@ -84,7 +85,7 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->subtitle = $request->subtitle;
         $post->body = $request->body;
-        $post->author = $request->author;
+        $post->user_id = $request->user_id;
 
         $post->save();
 
