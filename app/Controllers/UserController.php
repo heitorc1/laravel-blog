@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Controllers;
 
-use App\Http\Requests\StoreUserRequest;
-use App\Http\Requests\UpdateUserRequest;
-use App\Models\User;
+use App\Requests\StoreUserRequest;
+use App\Requests\UpdateUserRequest;
+use App\Entities\User;
 use Illuminate\Support\Str;
 
 class UserController extends Controller
@@ -34,7 +34,7 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreUserRequest  $request
+     * @param  \App\Requests\StoreUserRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(StoreUserRequest $request)
@@ -55,7 +55,7 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Entities\User  $user
      * @return \Illuminate\Http\Response
      */
     public function show(User $user)
@@ -66,7 +66,7 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Entities\User  $user
      * @return \Illuminate\Http\Response
      */
     public function edit(User $user)
@@ -77,8 +77,8 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateUserRequest  $request
-     * @param  \App\Models\User  $user
+     * @param  \App\Requests\UpdateUserRequest  $request
+     * @param  \App\Entities\User  $user
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateUserRequest $request, User $user)
@@ -95,7 +95,7 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Entities\User  $user
      * @return \Illuminate\Http\Response
      */
     public function destroy(User $user)

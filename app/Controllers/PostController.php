@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Controllers;
 
-use App\Http\Requests\StorePostRequest;
-use App\Http\Requests\UpdatePostRequest;
-use App\Models\Post;
+use App\Requests\StorePostRequest;
+use App\Requests\UpdatePostRequest;
+use App\Entities\Post;
 
 class PostController extends Controller
 {
@@ -33,7 +33,7 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StorePostRequest  $request
+     * @param  \App\Requests\StorePostRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(StorePostRequest $request)
@@ -53,7 +53,7 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Post  $post
+     * @param  \App\Entities\Post  $post
      * @return \Illuminate\Http\Response
      */
     public function show(Post $post)
@@ -65,7 +65,7 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Post  $post
+     * @param  \App\Entities\Post  $post
      * @return \Illuminate\Http\Response
      */
     public function edit(Post $post)
@@ -76,8 +76,8 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdatePostRequest  $request
-     * @param  \App\Models\Post  $post
+     * @param  \App\Requests\UpdatePostRequest  $request
+     * @param  \App\Entities\Post  $post
      * @return \Illuminate\Http\Response
      */
     public function update(UpdatePostRequest $request, Post $post)
@@ -95,7 +95,7 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Post  $post
+     * @param  \App\Entities\Post  $post
      * @return \Illuminate\Http\Response
      */
     public function destroy(Post $post)
